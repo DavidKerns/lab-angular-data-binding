@@ -9,10 +9,17 @@ import foods from '../foods';
 export class FoodListComponent implements OnInit {
   foods: Object[];
 
+  today = new Date();
+ stuff: Array<Object> = [];
+ pattern: string;
+
   constructor() { }
 
   ngOnInit() {
     this.foods= foods;
   }
+  addItem(item) {
+      this.stuff.push({name: item});
+    }
 
 }

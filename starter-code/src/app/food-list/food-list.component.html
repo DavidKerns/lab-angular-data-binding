@@ -1,9 +1,14 @@
 <p>Hello world</p>
-<div
- *ngFor="let food of foods">
+<div *ngFor="let food of foods | filter:'name':pattern; let i = index">
       <p>{{ food.name }}</p>
       <p>{{ food.calories }}</p>
       <img src="{{food.image }}">
       <p>{{ food.quanity }}</p>
 
   </div>
+
+  <div>
+    <label for="things_name"> Search Foods: </label>
+    <input id="things_name" placeholder="Food Name"
+            type="text" [(ngModel)]="pattern">
+</div>

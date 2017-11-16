@@ -1,0 +1,12 @@
+<button type="button" name="addfood" (click)= 'clicked= !clicked'>Add New Food</button>
+<div *ngIf="clicked">
+  <label for="thing_name"> Food Name </label>
+    <input placeholder="Food Name" type="text" #foodName>
+    <label for="thing_calories"> Food Calories </label>
+    <input placeholder="Calorie Amount" type="number" #foodCalorie>
+    <label for="thing_image"> Food URL </label>
+    <input placeholder="Pic of Food URL" type="text" #foodImg>
+    <button (click)="clicked = !clicked; addItem(foodName.value, foodCalorie.value, foodImg.value); foodName.value=''; foodCalorie.value='';foodImg.value='';">
+        add
+    </button>
+  </div>
